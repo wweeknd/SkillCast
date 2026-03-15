@@ -133,15 +133,31 @@ export default function MessagesPage() {
                             const sender = isMine ? currentUser : selectedUser;
                             const showAvatar = !isMine && (i === 0 || chatMessages[i - 1].senderId !== msg.senderId);
                             return (
-                                <div key={msg.id} style={{ display: 'flex', justifyContent: isMine ? 'flex-end' : 'flex-start', alignItems: 'flex-end', gap: '0.5rem' }}>
+                                <div key={msg.id} style={{ display: 'flex', justifyContent: isMine ? 'flex-end' : 'flex-start', alignItems: 'flex-end', gap: '0.625rem' }}>
                                     {!isMine && (
-                                        <div className="avatar" style={{ width: 28, height: 28, fontSize: '0.65rem', background: sender.avatarColor, opacity: showAvatar ? 1 : 0, flexShrink: 0 }}>
+                                        <div className="avatar" style={{ width: 30, height: 30, fontSize: '0.65rem', background: sender.avatarColor, opacity: showAvatar ? 1 : 0, flexShrink: 0 }}>
                                             {getAvatarInitials(sender.name)}
                                         </div>
                                     )}
-                                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: isMine ? 'flex-end' : 'flex-start', gap: '0.2rem' }}>
-                                        <div className={isMine ? 'chat-bubble-mine' : 'chat-bubble-other'}>{msg.content}</div>
-                                        <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>{formatTimeAgo(msg.timestamp)}</span>
+                                    <div style={{ 
+                                        display: 'flex', 
+                                        flexDirection: 'column', 
+                                        maxWidth: '100%',
+                                        minWidth: 0,
+                                        flex: 1
+                                    }}>
+                                        <div className={isMine ? 'chat-bubble-mine' : 'chat-bubble-other'} 
+                                             style={{ alignSelf: isMine ? 'flex-end' : 'flex-start', width: 'fit-content' }}>
+                                            {msg.content}
+                                        </div>
+                                        <span style={{ 
+                                            fontSize: '0.68rem', 
+                                            color: 'var(--text-muted)', 
+                                            marginTop: '0.25rem',
+                                            alignSelf: isMine ? 'flex-end' : 'flex-start'
+                                        }}>
+                                            {formatTimeAgo(msg.timestamp)}
+                                        </span>
                                     </div>
                                 </div>
                             );

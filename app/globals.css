@@ -537,22 +537,28 @@ body {
   background: var(--text-primary);
   color: white;
   border-radius: 18px 18px 4px 18px;
-  padding: 0.6875rem 1rem;
-  max-width: 72%;
-  word-break: break-word;
+  padding: 0.65rem 1rem;
+  width: fit-content;
+  max-width: 75%;
+  flex-shrink: 0;
   font-size: 0.9375rem;
   line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .chat-bubble-other {
   background: var(--bg-secondary);
   color: var(--text-primary);
   border-radius: 18px 18px 18px 4px;
-  padding: 0.6875rem 1rem;
-  max-width: 72%;
-  word-break: break-word;
+  padding: 0.65rem 1rem;
+  width: fit-content;
+  max-width: 75%;
+  flex-shrink: 0;
   font-size: 0.9375rem;
   line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 /* ─── Match ring ─────────────────────────── */
