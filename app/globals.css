@@ -396,7 +396,7 @@ body {
   border-color: rgba(245, 158, 11, 0.25);
 }
 
-/* ─── Sidebar ────────────────────────────── */
+/* ─── Navigation ─────────────────────────── */
 .sidebar-item {
   display: flex;
   align-items: center;
